@@ -57,6 +57,7 @@
 ### 5. **Return Appropriate HTTP Status**
 
 * Use `ResponseEntity` to return the correct HTTP status and response body.
+* You can access the list of codes [here](URL)
 
     ```java
     return ResponseEntity.ok(product);
@@ -67,7 +68,13 @@
 
 ### 6. **Exception Handling**
 
-* Centralize exception handling using `@ControllerAdvice`.
+* For Centralize exception handling use `@ControllerAdvice`.
+* Use Custom exceptions instead of generic exceptions as 
+** Custom exceptions make your code easier to understand, as their names indicate the specific problem (e.g., ProductNotFoundException clearly shows that a product was not found).
+
+** Tailored Error Handling: You can provide specific responses and HTTP status codes based on the type of error, improving the user experience.
+
+** Enhanced Maintainability: Custom exceptions help organize your error handling, making the codebase easier to maintain and extend as your application grows, allowing developers to quickly identify and resolve issues.
 
     ```java
     @ControllerAdvice
